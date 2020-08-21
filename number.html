@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Bunch Of Mini Number Tools</title>
+        <meta charset="UTF-8"/>
+        <script src = "scripts/fibonacci.js"></script>
+        <script src = "scripts/factorial.js"></script>
+        <script src = "scripts/prime_factorization.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300;400&family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "number.css"/>
+    </head>
+    <body>
+        <div id = "main">
+            <div id = "fibSeq" class = "tooldiv">
+                <h1>Fibonacci Sequence Generator</h1>
+                <label for = "n_input_fib">Fibonacci sequence up to...</label>
+                <input type = "text" class = "text_input" id = "n_input_fib" name = "n_input"/>
+                <input type = "button" class = "button" id = "fib_button" name = "fib_button" value = "Enter" onclick="displayFib()"/>
+                <textarea id = "fib_output" cols = "50" disabled></textarea>
+            </div>
+
+            <div id = "factorial" class = "tooldiv">
+                <h1>Factorial Calculator</h1>
+                <label for = "n_input_factorial">Factorial of N...</label>
+                <input type = "text" class = "text_input" id = "n_input_factorial" name = "n_input_factorial"/>
+                <input type = "button" class = "button" id = "factorial_loop_button" name = "factorial_loop_button" value = "Calculate with Loop" onclick = "button(true)"/>
+                <input type = "button" class = "button" id = "factorial_recursion_button" name = "factorial_recursion_button" value = "Calculate with Recursion" onclick = "button(false)"/>
+                <textarea id = "factorial_output" cols = "50" disabled></textarea>
+            </div>
+
+            <div id = "prime_factorization" class = "tooldiv">
+                <h1>Prime Factorization</h1>
+                <label for = "n_input_primefactor">Of...</label>
+                <input type = "text" class  = "text_input" id = "n_input_primefactor" name = "n_input_primefactor"/>
+                <input type = "button" class = "button" id = "primefactor_button" name = "primefactor_button" value = "Enter" onclick = "primeFactorButton()"/>
+                <textarea id = "primefactor_output" cols = "50" disabled></textarea>
+            </div>
+        </div>
+    </body>
+</html>
