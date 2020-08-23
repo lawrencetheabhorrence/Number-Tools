@@ -6,6 +6,8 @@
         <script src = "scripts/fibonacci.js"></script>
         <script src = "scripts/factorial.js"></script>
         <script src = "scripts/prime_factorization.js"></script>
+        <script src = "scripts/prime_generator.js"></script>
+        <script src = "scripts/tile_cost.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300;400&family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "number.css"/>
     </head>
@@ -34,6 +36,24 @@
                 <input type = "text" class  = "text_input" id = "n_input_primefactor" name = "n_input_primefactor"/>
                 <input type = "button" class = "button" id = "primefactor_button" name = "primefactor_button" value = "Enter" onclick = "primeFactorButton()"/>
                 <textarea id = "primefactor_output" cols = "50" disabled></textarea>
+            </div>
+
+            <div id = "prime_generation" class = "tooldiv">
+                <h1>Prime Generation</h1>
+                <input type = "button" class = "button" id = "primegen_button" name = "primegen_button" value = "Next Prime" onclick = "prime_gen_button()"/>
+                <textarea id = "primegen_output" cols = "50" disabled></textarea>
+            </div>
+
+            <div id = "tile_cost" class = "tooldiv">
+                <h1>Cost of Tile to Cover Floor</h1>
+                <label for = "width_input">Width </label>
+                <input type = "text" class = "text_input" id = "width_input" name = "width_input"/>
+                <label for = "length_input">Length </label>
+                <input type = "text" class = "text_input" id = "length_input" name = "length_input"/>
+                <label for = "cost_input">Cost </label>
+                <input type = "text" class = "text_input" id = "cost_input" name = "cost_input"/>
+                <input type = "button" class = "button" id = "tile_button" name = "tile_button" value = "Enter" onclick = "tile_calculate()"/>
+                <textarea id = "tile_output" cols = "50" disabled></textarea>
             </div>
         </div>
     </body>
