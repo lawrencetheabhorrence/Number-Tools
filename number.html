@@ -8,6 +8,7 @@
         <script src = "scripts/prime_factorization.js"></script>
         <script src = "scripts/prime_generator.js"></script>
         <script src = "scripts/tile_cost.js"></script>
+        <script src = "scripts/bin_dec.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300;400&family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "number.css"/>
     </head>
@@ -54,6 +55,15 @@
                 <input type = "text" class = "text_input" id = "cost_input" name = "cost_input"/>
                 <input type = "button" class = "button" id = "tile_button" name = "tile_button" value = "Enter" onclick = "tile_calculate()"/>
                 <textarea id = "tile_output" cols = "50" disabled></textarea>
+            </div>
+
+            <div id = "binary_decimal" class = "tooldiv">
+                <h1>Binary-Decimal converter</h1>
+                <label for = "bin_dec_input">Enter in Decimal or Binary...</label>
+                <input type = "text" class = "text_input" id = "bin_dec_input" name = "bin_dec_input"/>
+                <input type = "button" class = "button" id = "dec_to_bin" value = "Decimal to Binary" onclick = "d2b_button()"/>
+                <input type = "button" class = "button" id = "bin_to_dec" value = "Binary to Decimal" onclick = "b2d_button()"/>
+                <textarea id = "bin_dec_output" cols = "50" disabled></textarea>
             </div>
         </div>
     </body>
