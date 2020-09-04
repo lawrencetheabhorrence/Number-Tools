@@ -1,6 +1,6 @@
-audio = new Audio("../sounds/beep.wav")
 
 function sound(){
+    audio = new Audio("C:\Users\Huang\Documents\karanNumbers\sounds\beep.wav");
     audio.loop = false;
     audio.play();
 }

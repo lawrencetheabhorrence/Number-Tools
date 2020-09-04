@@ -9,6 +9,8 @@
         <script src = "scripts/prime_generator.js"></script>
         <script src = "scripts/tile_cost.js"></script>
         <script src = "scripts/bin_dec.js"></script>
+        <script src = "scripts/alarm.js"></script>
+        <script src = "scripts/coin_flip.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300;400&family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "number.css"/>
     </head>
@@ -17,7 +19,7 @@
             <div id = "fibSeq" class = "tooldiv">
                 <h1>Fibonacci Sequence Generator</h1>
                 <label for = "n_input_fib">Fibonacci sequence up to...</label>
-                <input type = "text" class = "text_input" id = "n_input_fib" name = "n_input"/>
+                <input type = "number" class = "text_input" id = "n_input_fib" name = "n_input"/>
                 <input type = "button" class = "button" id = "fib_button" name = "fib_button" value = "Enter" onclick="displayFib()"/>
                 <textarea id = "fib_output" cols = "50" disabled></textarea>
             </div>
@@ -25,7 +27,7 @@
             <div id = "factorial" class = "tooldiv">
                 <h1>Factorial Calculator</h1>
                 <label for = "n_input_factorial">Factorial of N...</label>
-                <input type = "text" class = "text_input" id = "n_input_factorial" name = "n_input_factorial"/>
+                <input type = "number" class = "text_input" id = "n_input_factorial" name = "n_input_factorial"/>
                 <input type = "button" class = "button" id = "factorial_loop_button" name = "factorial_loop_button" value = "Calculate with Loop" onclick = "button(true)"/>
                 <input type = "button" class = "button" id = "factorial_recursion_button" name = "factorial_recursion_button" value = "Calculate with Recursion" onclick = "button(false)"/>
                 <textarea id = "factorial_output" cols = "50" disabled></textarea>
@@ -34,7 +36,7 @@
             <div id = "prime_factorization" class = "tooldiv">
                 <h1>Prime Factorization</h1>
                 <label for = "n_input_primefactor">Of...</label>
-                <input type = "text" class  = "text_input" id = "n_input_primefactor" name = "n_input_primefactor"/>
+                <input type = "number" class  = "text_input" id = "n_input_primefactor" name = "n_input_primefactor"/>
                 <input type = "button" class = "button" id = "primefactor_button" name = "primefactor_button" value = "Enter" onclick = "primeFactorButton()"/>
                 <textarea id = "primefactor_output" cols = "50" disabled></textarea>
             </div>
@@ -48,11 +50,11 @@
             <div id = "tile_cost" class = "tooldiv">
                 <h1>Cost of Tile to Cover Floor</h1>
                 <label for = "width_input">Width </label>
-                <input type = "text" class = "text_input" id = "width_input" name = "width_input"/>
+                <input type = "number" class = "text_input" id = "width_input" name = "width_input"/>
                 <label for = "length_input">Length </label>
-                <input type = "text" class = "text_input" id = "length_input" name = "length_input"/>
+                <input type = "number" class = "text_input" id = "length_input" name = "length_input"/>
                 <label for = "cost_input">Cost </label>
-                <input type = "text" class = "text_input" id = "cost_input" name = "cost_input"/>
+                <input type = "number" class = "text_input" id = "cost_input" name = "cost_input"/>
                 <input type = "button" class = "button" id = "tile_button" name = "tile_button" value = "Enter" onclick = "tile_calculate()"/>
                 <textarea id = "tile_output" cols = "50" disabled></textarea>
             </div>
@@ -69,10 +71,16 @@
             <div id = "alarm" class = "tooldiv">
                 <h1>Alarm</h1>
                 <label for = "minutes_input">Minutes</label>
-                <input type = "number" class = "text_input" id = "minutes_input" name = "minutes_input"/>
+                <input type = "number" class = "text_input" id = "minutes_input" name = "minutes_input" value = "0"/>
                 <label for = "seconds_input">Seconds</label>
-                <input type = "number" class = "text_input" id = "seconds_input" name = "seconds_input"/>
-                <input type = "button" class = "button" id = "alarm_button" name = "alarm_button" onclick = "alarm_button()"/>
+                <input type = "number" class = "text_input" id = "seconds_input" name = "seconds_input" value = "0"/>
+                <input type = "button" class = "button" id = "alarm_button" name = "alarm_button" value = "Play Alarm" onclick = "alarm_button()"/>
+            </div>
+
+            <div id = "coin_flip" class = "tooldiv">
+                <h1>Coin Flip Simulator</h1>
+                <input type = "button" class = "button" id = "coin_flip_button" value = "Flip Coin" onclick = "coin_flip()"/>
+                <textarea id = "coin_flip_output" cols = "50" disabled></textarea>
             </div>
         </div>
     </body>
