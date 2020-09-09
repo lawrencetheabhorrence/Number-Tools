@@ -3,24 +3,26 @@
 //nickel = 5 cents
 //penny = 1 cents
 
+
 function changeDenom(amount, cost){
+    if (cost > amount) return "Pay more you cheapskate"
     change = (amount - cost) * 100;
-    coins = []
+    coins = [0, 0, 0, 0, 0];
     values = [100, 25, 10, 5, 1];
-    changeHelper(coins, change, values, 0);
+    changeHelper(coins, values, change);
     return "Bills: " + coins[0] + "\tQuarters: " + coins[1] + "\nDimes: " + coins[2] +"\tNickels: " + coins[3] + "\tPennies: " + coins[4];
 }
 
-function changeHelper(coins, fractional, values, index){
-    if (index === values.length) return;
-    amount = Math.floor(fractional/values[index]);
-    coins.push(amount)
-    changeHelper(coind, fractional - values[index]*amount, index++);
+function changeHelper(coins, values, fractional){
+    for(i = 0; i < coins.length; i++){
+        coins[i] = Math.floor(fractional/(values[i]));
+        fractional = fractional - (coins[i]*values[i]);
+    }
 }
 
 function change_button(){
-    amount = parseInt(document.getElementById("paid_input").value);
-    cost = parseInt(document.getElementById("price_input").value);
+    amount = document.getElementById("paid_input").value;
+    cost = document.getElementById("price_input").value;
     output = document.getElementById("change_output");
     output.value = changeDenom(amount, cost);
 }
