@@ -11,6 +11,7 @@
         <script src = "scripts/bin_dec.js"></script>
         <script src = "scripts/alarm.js"></script>
         <script src = "scripts/coin_flip.js"></script>
+        <script src = "scripts/change.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300;400&family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "number.css"/>
     </head>
@@ -81,6 +82,16 @@
                 <h1>Coin Flip Simulator</h1>
                 <input type = "button" class = "button" id = "coin_flip_button" value = "Flip Coin" onclick = "coin_flip()"/>
                 <textarea id = "coin_flip_output" cols = "50" disabled></textarea>
+            </div>
+
+            <div id = "change" class = "tooldiv">
+                <h1>Change Calculator</h1>
+                <label for = "price_input">Enter Price: </label>
+                <input type = "number" class = "text_input" id = "price_input" name = "price_input" value = "0.00"/>
+                <label for = "paid_input">Enter Amount Paid: </label>
+                <input type = "number" class = "text_input" id = "paid_input" name = "paid_input" value = "0.00"/>
+                <input type = "button" class = "button" id = "change_button" value = "Calculate" onclick = "change_button()"/>
+                <textarea id = "change_output" cols = "50" disabled></textarea>
             </div>
         </div>
     </body>
