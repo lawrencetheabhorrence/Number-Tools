@@ -12,6 +12,7 @@
         <script src = "scripts/alarm.js"></script>
         <script src = "scripts/coin_flip.js"></script>
         <script src = "scripts/change.js"></script>
+        <script src = "scripts/fast_expo.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300;400&family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "number.css"/>
     </head>
@@ -92,6 +93,16 @@
                 <input type = "number" class = "text_input" id = "paid_input" name = "paid_input" value = "0.00"/>
                 <input type = "button" class = "button" id = "change_button" value = "Calculate" onclick = "change_button()"/>
                 <textarea id = "change_output" cols = "50" disabled></textarea>
+            </div>
+
+            <div id = "fast_expo" class = "tooldiv">
+                <h1>Fast Exponentiation</h1>
+                <label for = "n_expo_input">Enter Number: </label>
+                <input type = "number" id = "n_expo_input" name = "n_expo_input"/>
+                <label for = "k_expo_input">Enter Exponent: </label>
+                <input type = "number" id = "k_expo_input" name = "k_expo_input"/>
+                <input type = "button" id = "expo_button" value = "Calculate" onclick = "expo_button"/>
+                <textarea id = "expo_output"></textarea>
             </div>
         </div>
     </body>
