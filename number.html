@@ -22,50 +22,50 @@
             <div id = "fibSeq" class = "tooldiv">
                 <h1>Fibonacci Sequence Generator</h1>
                 <label for = "n_input_fib">Fibonacci sequence up to...</label>
-                <input type = "number" class = "text_input" id = "n_input_fib" name = "n_input"/>
-                <input type = "button" class = "button" id = "fib_button" name = "fib_button" value = "Enter" onclick="displayFib()"/>
+                <input type = "number" class = "text_input" id = "n_input_fib"/>
+                <input type = "button" class = "button" id = "fib_button" value = "Enter" onclick="displayFib()"/>
                 <textarea id = "fib_output" cols = "50" disabled></textarea>
             </div>
 
             <div id = "factorial" class = "tooldiv">
                 <h1>Factorial Calculator</h1>
                 <label for = "n_input_factorial">Factorial of N...</label>
-                <input type = "number" class = "text_input" id = "n_input_factorial" name = "n_input_factorial"/>
-                <input type = "button" class = "button" id = "factorial_loop_button" name = "factorial_loop_button" value = "Calculate with Loop" onclick = "button(true)"/>
-                <input type = "button" class = "button" id = "factorial_recursion_button" name = "factorial_recursion_button" value = "Calculate with Recursion" onclick = "button(false)"/>
+                <input type = "number" class = "text_input" id = "n_input_factorial"/>
+                <input type = "button" class = "button" id = "factorial_loop_button" value = "Calculate with Loop" onclick = "button(true)"/>
+                <input type = "button" class = "button" id = "factorial_recursion_button" value = "Calculate with Recursion" onclick = "button(false)"/>
                 <textarea id = "factorial_output" cols = "50" disabled></textarea>
             </div>
 
             <div id = "prime_factorization" class = "tooldiv">
                 <h1>Prime Factorization</h1>
                 <label for = "n_input_primefactor">Of...</label>
-                <input type = "number" class  = "text_input" id = "n_input_primefactor" name = "n_input_primefactor"/>
-                <input type = "button" class = "button" id = "primefactor_button" name = "primefactor_button" value = "Enter" onclick = "primeFactorButton()"/>
+                <input type = "number" class  = "text_input" id = "n_input_primefactor"/>
+                <input type = "button" class = "button" id = "primefactor_button" value = "Enter" onclick = "primeFactorButton()"/>
                 <textarea id = "primefactor_output" cols = "50" disabled></textarea>
             </div>
 
             <div id = "prime_generation" class = "tooldiv">
                 <h1>Prime Generation</h1>
-                <input type = "button" class = "button" id = "primegen_button" name = "primegen_button" value = "Next Prime" onclick = "prime_gen_button()"/>
+                <input type = "button" class = "button" id = "primegen_button" value = "Next Prime" onclick = "prime_gen_button()"/>
                 <textarea id = "primegen_output" cols = "50" disabled></textarea>
             </div>
 
             <div id = "tile_cost" class = "tooldiv">
                 <h1>Cost of Tile to Cover Floor</h1>
                 <label for = "width_input">Width </label>
-                <input type = "number" class = "text_input" id = "width_input" name = "width_input"/>
+                <input type = "number" class = "text_input" id = "width_input"/>
                 <label for = "length_input">Length </label>
-                <input type = "number" class = "text_input" id = "length_input" name = "length_input"/>
+                <input type = "number" class = "text_input" id = "length_input"/>
                 <label for = "cost_input">Cost </label>
                 <input type = "number" class = "text_input" id = "cost_input" name = "cost_input"/>
-                <input type = "button" class = "button" id = "tile_button" name = "tile_button" value = "Enter" onclick = "tile_calculate()"/>
+                <input type = "button" class = "button" id = "tile_button" value = "Enter" onclick = "tile_calculate()"/>
                 <textarea id = "tile_output" cols = "50" disabled></textarea>
             </div>
 
             <div id = "binary_decimal" class = "tooldiv">
                 <h1>Binary-Decimal converter</h1>
                 <label for = "bin_dec_input">Enter in Decimal or Binary...</label>
-                <input type = "text" class = "text_input" id = "bin_dec_input" name = "bin_dec_input"/>
+                <input type = "text" class = "text_input" id = "bin_dec_input"/>
                 <input type = "button" class = "button" id = "dec_to_bin" value = "Decimal to Binary" onclick = "d2b_button()"/>
                 <input type = "button" class = "button" id = "bin_to_dec" value = "Binary to Decimal" onclick = "b2d_button()"/>
                 <textarea id = "bin_dec_output" cols = "50" disabled></textarea>
@@ -74,9 +74,9 @@
             <div id = "alarm" class = "tooldiv">
                 <h1>Alarm</h1>
                 <label for = "minutes_input">Minutes</label>
-                <input type = "number" class = "text_input" id = "minutes_input" name = "minutes_input" value = "0"/>
+                <input type = "number" class = "text_input" id = "minutes_input"/>
                 <label for = "seconds_input">Seconds</label>
-                <input type = "number" class = "text_input" id = "seconds_input" name = "seconds_input" value = "0"/>
+                <input type = "number" class = "text_input" id = "seconds_input"/>
                 <input type = "button" class = "button" id = "alarm_button" name = "alarm_button" value = "Play Alarm" onclick = "alarm_button()"/>
             </div>
 
@@ -89,9 +89,9 @@
             <div id = "change" class = "tooldiv">
                 <h1>Change Calculator</h1>
                 <label for = "price_input">Enter Price: </label>
-                <input type = "number" class = "text_input" id = "price_input" name = "price_input" value = "0.00"/>
+                <input type = "number" class = "text_input" id = "price_input"/>
                 <label for = "paid_input">Enter Amount Paid: </label>
-                <input type = "number" class = "text_input" id = "paid_input" name = "paid_input" value = "0.00"/>
+                <input type = "number" class = "text_input" id = "paid_input"/>
                 <input type = "button" class = "button" id = "change_button" value = "Calculate" onclick = "change_button()"/>
                 <textarea id = "change_output" cols = "50" disabled></textarea>
             </div>
@@ -99,9 +99,9 @@
             <div id = "fast_expo" class = "tooldiv">
                 <h1>Fast Exponentiation</h1>
                 <label for = "n_expo_input">Enter Number: </label>
-                <input type = "number" class  = "text_input" id = "n_expo_input" name = "n_expo_input"/>
+                <input type = "number" class  = "text_input" id = "n_expo_input"/>
                 <label for = "k_expo_input">Enter Exponent: </label>
-                <input type = "number" class  = "text_input" id = "k_expo_input" name = "k_expo_input"/>
+                <input type = "number" class  = "text_input" id = "k_expo_input"/>
                 <input type = "button" class = "button" id = "expo_button" value = "Calculate" onclick = "expo_button"/>
                 <textarea id = "expo_output"></textarea>
             </div>
@@ -109,8 +109,8 @@
             <div id = "happy_numbers" class = "tooldiv">
                 <h1>Happy Numbers</h1>
                 <label for = "n_happy_input">Find the first n happy numbers</label>
-                <input type = "number" class  = "text_input" id = "n_happy_input" name = "n_happy_input">
-                <input type = "button" class = "button" id = "happy_button" name = "happy_button" onclick = "happy_button()" value = "Find Happy Numbers">
+                <input type = "number" class  = "text_input" id = "n_happy_input">
+                <input type = "button" class = "button" id = "happy_button" onclick = "happy_button()" value = "Find Happy Numbers">
                 <textarea id = "happy_output"></textarea>
             </div>
         </div>
