@@ -13,6 +13,7 @@
         <script src = "scripts/coin_flip.js"></script>
         <script src = "scripts/change.js"></script>
         <script src = "scripts/fast_expo.js"></script>
+        <script src = "scripts/number_names.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300;400&family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "number.css"/>
     </head>
@@ -105,5 +106,11 @@
                 <textarea id = "expo_output"></textarea>
             </div>
 
+            <div id = "number_names" class = "tooldiv">
+                <h1>Number Names Up To One Million</h1>
+                <label for = "number_name_input">Enter a number</label>
+                <input type="number" class="text_input" id="number_name_input"/>
+                <input type="button" class="button" id="number_name_button" value="Name the number" onclick="name_button()">
+                <textarea id = "number_name_output"></textarea>
     </body>
 </html>
