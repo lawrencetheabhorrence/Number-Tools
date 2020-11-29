@@ -73,9 +73,23 @@ const binToDec = n => {
 
 const dtbHelper = (n, out) =>
   // helper function for the decToBin function
-  if (n == 0) return out.split('').reverse().join('') // reverses the binary bits
+  if (n === 0) return out.split('').reverse().join('') // reverses the binary bits
   return (n % 2 === 1) ? dtbHelper((n-1) / 2, out.concat('1')) : dtbHelper(n / 2, out.concat('0')) // determines binary bits (tho in reverse) ??
 
 const decToBin = (n) => dtbHelper(n, "")
 
-export default { fibonacciUpTo, factorialLoop, factorialRecursion, primeFactorization, primeGen, binToDec, decToBin}
+const changeDenom = (amount, cost, coins, values) => {
+  if (coins.length === values.length) {
+    if (cost > amount) return 'Pay more you cheapskate'
+    const change = (amount - cost) * 100
+    coins.map((coin, i, coinsList) => Math.floor((change - (i * coinsList[i] * values[i])) / values[i]))
+    return `Bills: ${coins[0]} \tQuarters: ${coins[1]} \nDimes: ${coins[2]} \tNickels: ${coins[3]} \tPennies: ${coins[4]}`
+  }
+}
+
+const fastExpo = (n, k) => {
+  if (n === 0 || n === 1) return n
+  return (k % 2 === 0) ? n * n * fastExpo(n, k - 2) : n * fast_expo(n, k - 1)
+}
+
+export default { fibonacciUpTo, factorialLoop, factorialRecursion, primeFactorization, primeGen, binToDec, decToBin, changeDenom, fastExpo}
