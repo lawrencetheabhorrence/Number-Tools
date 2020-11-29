@@ -49,7 +49,7 @@ const primeFactorization = n => {
   return factors.join
 }
 
-const primeGen => {
+const primeGen = () => {
   // generates primes through the euclidean method
   let i = 1
   let primes = [2]
