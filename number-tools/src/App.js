@@ -1,9 +1,12 @@
 import React from 'react'
 import './index.css'
+import FibSeq from 'components/FibSeq'
 
 const App = () => {
   return (
-    <h1>Number Tools</h1>
+    <div id='main'>
+      <FibSeq />
+    </div>
   )
 }
 

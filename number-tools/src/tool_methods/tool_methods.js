@@ -53,7 +53,7 @@ const primeGen = () => {
   // generates primes through the euclidean method
   let i = 1
   let primes = [2]
-  for (x of primes)
+  for (let x of primes)
     i *= x
   i++
   primes.push(i)
@@ -77,7 +77,7 @@ const dtbHelper = (n, out) => {
   return (n % 2 === 1) ? dtbHelper((n-1) / 2, out.concat('1')) : dtbHelper(n / 2, out.concat('0')) // determines binary bits (tho in reverse) ??
 }
 
-const decToBin = (n) => dtbHelper(n, "")
+const decToBin = (n) => dtbHelper(n, '')
 
 const changeDenom = (amount, cost, coins, values) => {
   if (coins.length === values.length) {
@@ -90,29 +90,29 @@ const changeDenom = (amount, cost, coins, values) => {
 
 const fastExpo = (n, k) => {
   if (n === 0 || n === 1) return n
-  return (k % 2 === 0) ? n * n * fastExpo(n, k - 2) : n * fast_expo(n, k - 1)
+  return (k % 2 === 0) ? n * n * fastExpo(n, k - 2) : n * fastExpo(n, k - 1)
 }
 
 const numberNameChunk = n => {
   // names numbers up to 999
 
-  if (n == 0) return ""
+  if (n === 0) return ''
 
-  const ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
-  const tens = ["twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"]
-  const tenSet = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"]
-  let out = ""
+  const ones = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+  const tens = ['twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+  const tenSet = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
+  let out = ''
   let divisor = 1
 
-  while (Math.floor(n / divisor) != 0) {
-    digit = Math.floor(n / divisor) % 10
+  while (Math.floor(n / divisor) !== 0) {
+    const digit = Math.floor(n / divisor) % 10
 
-    if (divisor == 1 && digit > 0) out = ones[digit - 1] + out // ones place
-    if (divisor == 10) {
-      if (digit == 1)  out = tenSet[n % 10] // if tens place is 1, return the number name for the tens
-      if (digit > 2) out = tens[digit - 2] + " " + out
+    if (divisor === 1 && digit > 0) out = ones[digit - 1] + out // ones place
+    if (divisor === 10) {
+      if (digit === 1)  out = tenSet[n % 10] // if tens place is 1, return the number name for the tens
+      if (digit > 2) out = tens[digit - 2] + ' ' + out
     }
-    if (divisor == 100) out = ones[digit - 1] + " hundred " + out // hundreds place
+    if (divisor === 100) out = ones[digit - 1] + ' hundred ' + out // hundreds place
 
     divisor *= 10
   }
@@ -120,16 +120,16 @@ const numberNameChunk = n => {
   return out
 }
 
-numberNames = n => {
+const numberNames = n => {
   // handles input up to 1 million
-  if (n > Math.pow(10, 6)) return "enter a smaller number"
-  if (n < 0) return "negative numbers not yet supported"
-  if (n == Math.pow(10, 6)) return "one million"
-  if (n == 0) return "zero"
+  if (n > Math.pow(10, 6)) return 'enter a smaller number'
+  if (n < 0) return 'negative numbers not yet supported'
+  if (n === Math.pow(10, 6)) return 'one million'
+  if (n === 0) return 'zero'
 
   const firstChunk = n % 1000
   const secondChunk = Math.floor(n / 1000)
-  if (secondChunk > 0) return numberNameChunk(secondChunk) + " thousand " + numberNameChunk(firstChunk)
+  if (secondChunk > 0) return numberNameChunk(secondChunk) + ' thousand ' + numberNameChunk(firstChunk)
 
   return numberNameChunk(firstChunk)
 }

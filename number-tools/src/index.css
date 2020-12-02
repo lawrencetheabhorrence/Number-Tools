@@ -36,13 +36,13 @@ input{
     margin-bottom: 0.2em;
 }
 
-.text_input{
+input{
     background-color: #d64933;
     font-family: 'Nunito', sans-serif;
     color:white;
 }
 
-.button{
+button{
     background-color: #329f5b;
     font-family: 'Montserrat', serif;
     color:white;
