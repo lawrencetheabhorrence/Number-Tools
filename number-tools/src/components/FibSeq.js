@@ -8,7 +8,7 @@ const FibSeq = () => {
   const [output, setOutput] = useState('')
   return(
     <Tool title='Fibonacci Sequence Generator'>
-      <Input label='Fibonacci sequence up to...' buttonLabel='Enter' type='number' setText={setInput} />
+      <Input label='Fibonacci sequence up to...' type='number' setText={setInput} />
       <button onClick={() => setOutput(Tools.fibonacciUpTo(input))}>Enter</button>
       <textarea cols='50' disabled>{output}</textarea>
     </Tool>

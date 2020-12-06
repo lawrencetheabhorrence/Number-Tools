@@ -1,4 +1,12 @@
 import primeFactorHelper from './primeFactorHelper'
+import binHelper from './binHelper.js'
+
+const timeFunction = (func, n) => {
+  const t0 = new Date.getTime()
+  const result = func(n)
+  const t1 = new Date.getTime()
+  return `Result: ${result} \n The operation took ${t1-t0}`
+}
 
 const fibonacciUpTo = n => {
   if (n > 0) {
@@ -61,23 +69,14 @@ const primeGen = () => {
 
 // BINARY - DEC CONVERSION
 
-const confirmBinary = n => n.match(/[^0-1]+/) === null
-
 const binToDec = n => {
   // splits the digits into bits
   // the reducer simply multiplies each bit by 2 raised to their index
   // note: the bits are evaluated left to right
   const reducer = (accum, val, i, digits) => Math.pow(2, digits.length - 1 - i)*parseInt(val)
-  return confirmBinary(n) ? n.split('').reduce(reducer) : 'Not Binary'
+  return binHelper.confirmBinary(n) ? n.split('').reduce(reducer) : 'Not Binary'
 }
-
-const dtbHelper = (n, out) => {
-  // helper function for the decToBin function
-  if (n === 0) return out.split('').reverse().join('') // reverses the binary bits
-  return (n % 2 === 1) ? dtbHelper((n-1) / 2, out.concat('1')) : dtbHelper(n / 2, out.concat('0')) // determines binary bits (tho in reverse) ??
-}
-
-const decToBin = (n) => dtbHelper(n, '')
+const decToBin = (n) => binHelper.dtbHelper(n, '')
 
 const changeDenom = (amount, cost, coins, values) => {
   if (coins.length === values.length) {
