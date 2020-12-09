@@ -10,7 +10,7 @@ const PrimeFactor = () => {
     <Tool title='Prime Factorization'>
       <Input label='Of...' type='number' setText={setInput} />
       <button onClick={() => setOutput(Tools.primeFactorization(input))}>Enter</button>
-      <textarea cols="50" disabled>{output}</textarea>
+      <textarea cols='50' disabled>{output}</textarea>
     </Tool>
   )
 }
