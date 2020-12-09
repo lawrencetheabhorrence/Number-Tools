@@ -6,4 +6,4 @@ const dtbHelper = (n, out) => {
   return (n % 2 === 1) ? dtbHelper((n-1) / 2, out.concat('1')) : dtbHelper(n / 2, out.concat('0')) // determines binary bits (tho in reverse) ??
 }
 
-export default {confirmBinary, dtbHelper}
+export default { confirmBinary, dtbHelper }

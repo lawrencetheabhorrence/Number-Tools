@@ -11,8 +11,8 @@ const FastExpo = () => {
     <Tool title='Fast Exponentiation'>
       <Input label='Enter Number: ' type='number' setText={setNumber} />
       <Input label='Enter Exponent: ' type='number' setText={setExpo} />
-      <button onClick={() => setOutput(Tools.fastExpo(number, expo))} />
-      <textarea cols='50' disabled>{output}</textarea>
+      <button onClick={() => setOutput(Tools.fastExpo(number, expo))}>Calculate</button>
+      <textarea cols='50' value={output} disabled></textarea>
     </Tool>
   )
 }

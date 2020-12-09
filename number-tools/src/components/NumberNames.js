@@ -10,7 +10,7 @@ const NumberNames = () => {
     <Tool title='Number names up to one million'>
       <Input label='Enter a number' type='number' setText={setInput} />
       <button onClick={() => setOutput(Tools.numberNames(input))}>Name the number</button>
-      <textarea cols='50'>{output}</textarea>
+      <textarea cols='50' value={output} disabled></textarea>
     </Tool>
   )
 }

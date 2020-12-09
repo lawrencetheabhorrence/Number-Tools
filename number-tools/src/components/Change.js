@@ -11,8 +11,8 @@ const Change = () => {
     <Tool title='Change Calculator'>
       <Input label='Enter Price: ' type='number' setText={setPrice} />
       <Input label='Enter Amount Paid: ' type='number' setText={setPaid} />
-      <button onClick={() => setOutput(Tools.changeDenom(paid, price, [], [1, 0.25, 0.1, 0.5, 0.01]))} >Calculate</button>
-      <textarea cols='50' disabled>{output}</textarea>
+      <button onClick={() => setOutput(Tools.changeDenom(paid, price, [0, 0, 0, 0, 0], [1, 0.5, 0.25, 0.1, 0.01]))} >Calculate</button>
+      <textarea cols='50' value={output} disabled></textarea>
     </Tool>
   )
 }

@@ -2,9 +2,9 @@ import primeFactorHelper from './primeFactorHelper'
 import binHelper from './binHelper.js'
 
 const timeFunction = (func, n) => {
-  const t0 = new Date.getTime()
+  const t0 = performance.now()
   const result = func(n)
-  const t1 = new Date.getTime()
+  const t1 = performance.now()
   return `Result: ${result} \n The operation took ${t1-t0}`
 }
 
@@ -53,18 +53,13 @@ const factorialRecursion = n => {
 
 const primeFactorization = n => {
   let factors = primeFactorHelper.listOfFactors(n)
-  factors.map(f => `+${primeFactorHelper.powerOfFactor(n, f)}+`)
-  return factors.join
+  factors = factors.map(f => primeFactorHelper.powerOfFactor(n, f))
+  return factors.join(' x ')
 }
 
-const primeGen = () => {
+const primeGen = (primes) => {
   // generates primes through the euclidean method
-  let i = 1
-  let primes = [2]
-  for (let x of primes)
-    i *= x
-  i++
-  primes.push(i)
+  return primes.reduce((accum, val) => accum * val, 1) + 1
 }
 
 // BINARY - DEC CONVERSION
@@ -73,22 +68,25 @@ const binToDec = n => {
   // splits the digits into bits
   // the reducer simply multiplies each bit by 2 raised to their index
   // note: the bits are evaluated left to right
-  const reducer = (accum, val, i, digits) => Math.pow(2, digits.length - 1 - i)*parseInt(val)
-  return binHelper.confirmBinary(n) ? n.split('').reduce(reducer) : 'Not Binary'
+  const reducer = (accum, val, i, digits) => Math.pow(2, digits.length - i - 1)*val + accum
+  return binHelper.confirmBinary(n) ? n.split('').map(n => parseInt(n)).reduce(reducer, 0) : 'Not Binary'
 }
 const decToBin = (n) => binHelper.dtbHelper(n, '')
 
 const changeDenom = (amount, cost, coins, values) => {
   if (coins.length === values.length) {
     if (cost > amount) return 'Pay more you cheapskate'
-    const change = (amount - cost) * 100
-    coins.map((coin, i, coinsList) => Math.floor((change - (i * coinsList[i] * values[i])) / values[i]))
-    return `Bills: ${coins[0]} \tQuarters: ${coins[1]} \nDimes: ${coins[2]} \tNickels: ${coins[3]} \tPennies: ${coins[4]}`
+    let change = amount - cost
+    for(let i = 0; i < coins.length; i++){
+      coins[i] = Math.floor(change / values[i])
+      change -= coins[i] * values[i]
+    }
+    return `Bills: ${coins[0]} \tQuarters: ${coins[2]} \nDimes: ${coins[1]} \tNickels: ${coins[3]} \tPennies: ${coins[4]}`
   }
 }
 
 const fastExpo = (n, k) => {
-  if (n === 0 || n === 1) return n
+  if (k === 0 || k === 1) return n
   return (k % 2 === 0) ? n * n * fastExpo(n, k - 2) : n * fastExpo(n, k - 1)
 }
 
@@ -133,4 +131,4 @@ const numberNames = n => {
   return numberNameChunk(firstChunk)
 }
 
-export default { fibonacciUpTo, factorialLoop, factorialRecursion, primeFactorization, primeGen, binToDec, decToBin, changeDenom, fastExpo, numberNames }
+export default { fibonacciUpTo, factorialLoop, factorialRecursion, primeFactorization, primeGen, binToDec, decToBin, changeDenom, fastExpo, numberNames, timeFunction }

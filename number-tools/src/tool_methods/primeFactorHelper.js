@@ -9,17 +9,19 @@ const sieve = n => {
         break
       }
     }
-    if (prime) primes = primes.concat(k)
+    if (prime) primes.push(k)
   }
   return primes
 }
 
 // look for the exponent of each of the primes
 const powerOfFactor = (n, factor) => {
+  if (n % factor !== 0) return ''
   let power = 0
-  for (power; n % factor !== 0; power++)
-    n /= factor
-  return factor + '^' + power
+  for (power; n % power !== 0; power++)
+    n = Math.floor(n / factor)
+
+  return power > 1 ? `${factor}^${power}` : `${factor}`
 }
 
 const listOfFactors = n => {

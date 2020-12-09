@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Tool from './Tool'
 import Input from './Input'
-import Tools from '../tool_methods/tool_methods'
 
 const TileCost = () => {
   const [width, setWidth] = useState(0)
@@ -13,8 +12,10 @@ const TileCost = () => {
       <Input label='Width' type='number' setText={setWidth} />
       <Input label='Length' type='number' setText={setLength} />
       <Input label='Cost' type='number' setText={setCost} />
-      <button onClick={() => setOutput(() => setOutput(`${width * length * cost}`))}>Enter</button>
-      <textarea cols='50' disabled>{output}</textarea>
+      <button onClick={() => setOutput(`${width * length * cost}`)}>Enter</button>
+      <textarea cols='50' value={output} disabled></textarea>
     </Tool>
   )
 }
+
+export default TileCost

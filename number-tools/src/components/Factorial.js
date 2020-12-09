@@ -11,7 +11,7 @@ const Factorial = () => {
       <Input label='Factorial of N...' type='number' setText={setInput} />
       <button onClick={() => setOutput(Tools.timeFunction(Tools.factorialLoop, input))}>Calculate by loop</button>
       <button onClick={() => setOutput(Tools.timeFunction(Tools.factorialRecursion, input))}>Calculate by recursion</button>
-      <textarea cols='50' disabled>{output}</textarea>
+      <textarea cols='50' value={output} disabled></textarea>
     </Tool>
   )
 }

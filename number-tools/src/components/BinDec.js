@@ -11,7 +11,7 @@ const BinDec = () => {
       <Input label='Enter in Decimal or Binary...' type='text' setText={setInput} />
       <button onClick={() => setOutput(Tools.decToBin(input))}>Decimal to Binary</button>
       <button onClick={() => setOutput(Tools.binToDec(input))}>Binary to Decimal</button>
-      <textarea cols='50' disabled>{output}</textarea>
+      <textarea cols='50' value={output} disabled></textarea>
     </Tool>
   )
 }

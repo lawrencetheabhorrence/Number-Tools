@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:wght@300&family=Nunito:ital,wght@1,200&display=swap');
 #main{
     margin: 0.1em;
     padding: 1em;
@@ -21,6 +21,7 @@ label{
     color: white;
     font-family: 'Montserrat', serif;
     font-size: small;
+    text-align: left;
 }
 
 textarea{
@@ -32,14 +33,11 @@ textarea{
 }
 
 input{
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-}
-
-input{
     background-color: #d64933;
     font-family: 'Nunito', sans-serif;
     color:white;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
 }
 
 button{
@@ -51,8 +49,14 @@ button{
 .tooldiv{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: stretch;
+    align-items: stretch;
     text-align: center;
     background-color: #2a1e5c;
     padding: 0.5em;
+}
+
+.input{
+    display: table;
+    table-layout: fixed;
 }
